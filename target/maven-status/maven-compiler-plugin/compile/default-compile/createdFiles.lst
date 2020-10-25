@@ -1,0 +1,4 @@
+com\mobile\core\base\BaseTest.class
+com\mobile\core\base\AppiumDriverFactory.class
+com\mobile\core\util\UnableToLoadPropertiesException.class
+com\mobile\core\util\PropertyUtils.class
