@@ -1,0 +1,8 @@
+01:52:04.788 [main] INFO  test1 - close driver
+01:52:54.752 [main] INFO  test1 - Create Appium driver for local execution
+01:53:03.910 [main] INFO  test1 - close driver
+00:05:33.845 [main] INFO  test1 - Create Appium driver for local execution
+00:05:44.297 [main] INFO  test1 - close driver
+00:06:01.260 [main] INFO  test1 - Create Appium driver for local execution
+00:06:11.935 [main] INFO  test1 - close driver
+23:17:57.669 [main] INFO  swipeAction - Create Appium driver for local execution

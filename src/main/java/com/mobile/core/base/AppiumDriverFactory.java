@@ -9,7 +9,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.PropertyPermission;
 
 public class AppiumDriverFactory {
 
@@ -73,10 +72,11 @@ public class AppiumDriverFactory {
         return new AppiumDriver (new URL (PropertyUtils.getProperty ("appium.server.url")), desiredCapabilities);
     }
 
-    public AppiumDriver getBrowserStackDriver() throws MalformedURLException {
+    public AppiumDriver getBrowserStackDriver(String testName) throws MalformedURLException {
         log.info ("Create Appium driver for BrowserStack execution" + executionPlatform);
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities ();
-
+        //TODO: Check following variable usage with Jenkins integration
+        String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
         switch (executionPlatform) {
 
             case "browserstack-pixel3-android9":
@@ -85,6 +85,10 @@ public class AppiumDriverFactory {
                 desiredCapabilities.setCapability (MobileCapabilityType.APP, browserStackUrlTheApp);
                 desiredCapabilities.setCapability ("device", browserStackDeviceGooglePixel3);
                 desiredCapabilities.setCapability ("os_version", browserStackOsVersion9);
+                //TODO: Check following variable usage with Jenkins integration
+                desiredCapabilities.setCapability("project", "The App");
+                desiredCapabilities.setCapability("build", buildName);
+                desiredCapabilities.setCapability("name", testName);
 
             default:
                 desiredCapabilities.setCapability ("browserstack.user", browserStackUser);

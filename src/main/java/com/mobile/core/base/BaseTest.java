@@ -35,7 +35,7 @@ public class BaseTest {
 
         AppiumDriverFactory appiumDriverFactory = new AppiumDriverFactory (executionPlatform, log);
         if (useBrowserStack.equals ("true")){
-            AppiumDriver driver = appiumDriverFactory.getBrowserStackDriver ();
+            AppiumDriver driver = appiumDriverFactory.getBrowserStackDriver (testName);
             drivers.set (driver);
         }
         else{

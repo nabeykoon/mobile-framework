@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-11-03T00:22:15 IST" name="BrowserStack Test Suite" finished-at="2020-11-03T00:22:39 IST" duration-ms="24429">
+    <groups>
+    </groups>
+    <test started-at="2020-11-03T00:22:15 IST" name="simpleTest" finished-at="2020-11-03T00:22:39 IST" duration-ms="24429">
+      <class name="com.theApp.Test1">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method, org.testng.ITestContext, java.lang.String, java.lang.String)[pri:0, instance:com.theApp.Test1@740773a3]" started-at="2020-11-03T00:22:15 IST" name="setup" finished-at="2020-11-03T00:22:37 IST" duration-ms="22643" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.theApp.Test1.test1()]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@48c3205a]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[browserstack-pixel3-android9]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="test1()[pri:0, instance:com.theApp.Test1@740773a3]" started-at="2020-11-03T00:22:37 IST" name="test1" finished-at="2020-11-03T00:22:39 IST" duration-ms="1204" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.theApp.Test1@740773a3]" started-at="2020-11-03T00:22:39 IST" name="tearDown" finished-at="2020-11-03T00:22:39 IST" duration-ms="565" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.theApp.Test1 -->
+    </test> <!-- simpleTest -->
+  </suite> <!-- BrowserStack Test Suite -->
+</testng-results>

@@ -1,0 +1,8 @@
+00:56:37.434 [main] INFO  test1 - Create Appium driver for local execution
+00:56:44.438 [main] INFO  test1 - close driver
+00:59:43.371 [main] INFO  test1 - Create Appium driver for local execution
+00:59:50.354 [main] INFO  test1 - close driver
+23:19:29.866 [main] INFO  test1 - Create Appium driver for local execution
+23:19:38.416 [main] INFO  test1 - close driver
+23:55:08.937 [main] INFO  test1 - Create Appium driver for BrowserStack executionbrowserstack-pixel3-android9
+23:55:32.844 [main] INFO  test1 - close driver

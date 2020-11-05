@@ -6,7 +6,7 @@
         <parameter name="useBrowserStack" value="true"></parameter>
         <parameter name="executionPlatform" value="browserstack-pixel3-android9"></parameter>
         <classes>
-            <class name="com.theApp.Test1" />
+            <class name="com.theApp.UserLoginScenario" />
         </classes>
     </test>
 </suite>
