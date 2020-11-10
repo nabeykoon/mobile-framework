@@ -5,6 +5,7 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -51,7 +52,6 @@ public class AppiumDriverFactory {
     public AppiumDriver getDriver() throws MalformedURLException {
         log.info ("Create Appium driver for local execution");
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities ();
-
         switch (executionPlatform) {
 
             case "emulator-nexus5-android9":
@@ -61,13 +61,20 @@ public class AppiumDriverFactory {
                 desiredCapabilities.setCapability (MobileCapabilityType.AUTOMATION_NAME, automationName);
                 desiredCapabilities.setCapability (MobileCapabilityType.APP, appAbsolutePath);
 
+            case "realDevice-oneplus6":
+                desiredCapabilities.setCapability (MobileCapabilityType.PLATFORM_NAME, platformName);
+                desiredCapabilities.setCapability (MobileCapabilityType.PLATFORM_VERSION, platformVersion);
+                desiredCapabilities.setCapability (MobileCapabilityType.DEVICE_NAME, deviceName);
+                desiredCapabilities.setCapability (MobileCapabilityType.AUTOMATION_NAME, automationName);
+                desiredCapabilities.setCapability (MobileCapabilityType.APP, appAbsolutePath);
+                //desiredCapabilities.setCapability (MobileCapabilityType.UDID, "74d36c16");
+
             default:
                 desiredCapabilities.setCapability (MobileCapabilityType.PLATFORM_NAME, platformName);
                 desiredCapabilities.setCapability (MobileCapabilityType.PLATFORM_VERSION, platformVersion);
                 desiredCapabilities.setCapability (MobileCapabilityType.DEVICE_NAME, deviceName);
                 desiredCapabilities.setCapability (MobileCapabilityType.AUTOMATION_NAME, automationName);
                 desiredCapabilities.setCapability (MobileCapabilityType.APP, appAbsolutePath);
-
         }
         return new AppiumDriver (new URL (PropertyUtils.getProperty ("appium.server.url")), desiredCapabilities);
     }
@@ -76,7 +83,7 @@ public class AppiumDriverFactory {
         log.info ("Create Appium driver for BrowserStack execution" + executionPlatform);
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities ();
         //TODO: Check following variable usage with Jenkins integration
-        String buildName = System.getenv("BROWSERSTACK_BUILD_NAME");
+        String buildName = System.getenv ("BROWSERSTACK_BUILD_NAME");
         switch (executionPlatform) {
 
             case "browserstack-pixel3-android9":
@@ -86,9 +93,9 @@ public class AppiumDriverFactory {
                 desiredCapabilities.setCapability ("device", browserStackDeviceGooglePixel3);
                 desiredCapabilities.setCapability ("os_version", browserStackOsVersion9);
                 //TODO: Check following variable usage with Jenkins integration
-                desiredCapabilities.setCapability("project", "The App");
-                desiredCapabilities.setCapability("build", buildName);
-                desiredCapabilities.setCapability("name", testName);
+                desiredCapabilities.setCapability ("project", "The App");
+                desiredCapabilities.setCapability ("build", buildName);
+                desiredCapabilities.setCapability ("name", testName);
 
             default:
                 desiredCapabilities.setCapability ("browserstack.user", browserStackUser);
@@ -99,5 +106,26 @@ public class AppiumDriverFactory {
 
         }
         return new AppiumDriver (new URL (PropertyUtils.getProperty ("browserstack.server.url")), desiredCapabilities);
+    }
+
+    public RemoteWebDriver getRemoteWebDriver() throws MalformedURLException {
+        log.info ("Create remote web driver for browser based execution in mobile device");
+        DesiredCapabilities desiredCapabilities = new DesiredCapabilities ();
+        switch (executionPlatform) {
+            case "emulator-nexus5-android9":
+                desiredCapabilities.setCapability (MobileCapabilityType.PLATFORM_NAME, platformName);
+                desiredCapabilities.setCapability (MobileCapabilityType.PLATFORM_VERSION, platformVersion);
+                desiredCapabilities.setCapability (MobileCapabilityType.DEVICE_NAME, deviceName);
+                desiredCapabilities.setCapability (MobileCapabilityType.AUTOMATION_NAME, automationName);
+                desiredCapabilities.setCapability (MobileCapabilityType.BROWSER_NAME, "chrome");
+
+            default:
+                desiredCapabilities.setCapability (MobileCapabilityType.PLATFORM_NAME, platformName);
+                desiredCapabilities.setCapability (MobileCapabilityType.PLATFORM_VERSION, platformVersion);
+                desiredCapabilities.setCapability (MobileCapabilityType.DEVICE_NAME, deviceName);
+                desiredCapabilities.setCapability (MobileCapabilityType.AUTOMATION_NAME, automationName);
+                desiredCapabilities.setCapability (MobileCapabilityType.BROWSER_NAME, "chrome");
+        }
+        return new RemoteWebDriver (new URL (PropertyUtils.getProperty ("appium.server.url")), desiredCapabilities);
     }
 }

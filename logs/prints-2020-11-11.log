@@ -1,0 +1,6 @@
+01:42:38.069 [main] INFO  multipleContextTest - Create Appium driver for local execution
+01:43:05.834 [main] INFO  multipleContextTest - Create Appium driver for local execution
+01:43:36.328 [main] INFO  multipleContextTest - Create Appium driver for local execution
+01:43:46.832 [main] INFO  multipleContextTest - Switching to alert and pressing OK
+01:43:53.185 [main] INFO  multipleContextTest - WEBVIEW_io.cloudgrey.the_app
+01:43:56.429 [main] INFO  multipleContextTest - WEBVIEW_io.cloudgrey.the_app

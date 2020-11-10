@@ -1,0 +1,8 @@
+23:03:44.735 [main] INFO  webViewTest - Cloud Grey: Appium Delivered
+23:03:46.742 [main] INFO  webViewTest - close driver
+00:44:25.496 [main] INFO  multipleContextTest - Create Appium driver for local execution
+00:44:36.881 [main] INFO  multipleContextTest - close driver
+00:44:49.529 [main] INFO  webViewTest - Create Appium driver for local execution
+00:45:03.874 [main] INFO  webViewTest - WEBVIEW_io.cloudgrey.the_app
+00:45:08.559 [main] INFO  webViewTest - Cloud Grey: Appium Delivered
+00:45:08.560 [main] INFO  webViewTest - close driver

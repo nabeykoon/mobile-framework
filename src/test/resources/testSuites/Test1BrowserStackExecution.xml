@@ -2,8 +2,8 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
 <suite name="BrowserStack Test Suite" verbose="1">
-    <test name="simpleTest">
-        <parameter name="useBrowserStack" value="true"></parameter>
+    <test name="Test user login">
+        <parameter name="driverType" value="browserStack"></parameter>
         <parameter name="executionPlatform" value="browserstack-pixel3-android9"></parameter>
         <classes>
             <class name="com.theApp.UserLoginScenario" />

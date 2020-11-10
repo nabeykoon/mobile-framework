@@ -13,6 +13,7 @@ public class WelcomePage extends BasePageObject {
 
     private By loginScreenLocator = MobileBy.AccessibilityId ("Login Screen");
     private By listDemoLocator = MobileBy.AccessibilityId ("List Demo");
+    private By webViewLocator = MobileBy.AccessibilityId ("Webview Demo");
 
     public void goToLoginScreen() {
         waitForVisibilityOf (loginScreenLocator, 10);
@@ -24,5 +25,11 @@ public class WelcomePage extends BasePageObject {
         waitForVisibilityOf (listDemoLocator, 10);
         WebElement listDemo = find (listDemoLocator);
         listDemo.click ();
+    }
+
+    public void goToWebView(){
+        waitForVisibilityOf (webViewLocator, 10);
+        WebElement webView = find(webViewLocator);
+        webView.click ();
     }
 }

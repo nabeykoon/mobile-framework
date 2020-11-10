@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Browser based Tests in mobile - Test Suite" verbose="1">
+    <test name="Test opening Appium Pro site from mobile browser">
+        <parameter name="driverType" value="RemoteWebDriver"></parameter>
+        <parameter name="executionPlatform" value="emulator-nexus5-android9"></parameter>
+        <classes>
+            <class name="com.theApp.MobileWebBrowserTestScenario" />
+        </classes>
+    </test>
+</suite>
