@@ -1,12 +1,9 @@
 package com.theApp;
 
-import com.mobile.core.base.BaseTest;
 import com.mobile.core.base.TestUtilities;
 import com.mobile.pages.LoginPage;
 import com.mobile.pages.WelcomePage;
 import org.testng.annotations.Test;
-
-import java.util.ArrayList;
 
 
 public class UserLoginScenario extends TestUtilities {

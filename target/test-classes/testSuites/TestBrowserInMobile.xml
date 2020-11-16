@@ -3,8 +3,9 @@
 
 <suite name="Browser based Tests in mobile - Test Suite" verbose="1">
     <test name="Test opening Appium Pro site from mobile browser">
+        <parameter name="platform" value="android"></parameter>
+        <parameter name="capabilitiesDesc" value="emulator-nexus5-android9"></parameter>
         <parameter name="driverType" value="RemoteWebDriver"></parameter>
-        <parameter name="executionPlatform" value="emulator-nexus5-android9"></parameter>
         <classes>
             <class name="com.theApp.MobileWebBrowserTestScenario" />
         </classes>

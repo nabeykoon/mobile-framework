@@ -1,0 +1,6 @@
+02:10:40.812 [main] INFO  multipleContextTest - Create Android driver for BrowserStack cloud execution
+02:11:13.776 [main] INFO  multipleContextTest - Switching to alert and pressing OK
+02:11:19.217 [main] INFO  multipleContextTest - WEBVIEW_io.cloudgrey.the_app
+02:11:27.850 [main] INFO  multipleContextTest - WEBVIEW_io.cloudgrey.the_app
+02:11:28.347 [main] INFO  multipleContextTest - close driver
+02:16:04.565 [main] INFO  multipleContextTest - Create Android driver for local appium server execution

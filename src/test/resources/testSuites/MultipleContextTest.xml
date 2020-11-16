@@ -3,8 +3,10 @@
 
 <suite name="Multiple context Test Suite" verbose="1">
     <test name="Multiple context test scenario">
-        <parameter name="driverType" value="browserStack"></parameter>
-        <parameter name="executionPlatform" value="browserstack-pixel3-android9"></parameter>
+        <parameter name="platform" value="android"></parameter>
+        <parameter name="capabilitiesDesc" value="emulator-nexus5-android9"></parameter>
+        <parameter name="driverType" value="appiumlocal"></parameter>
+
         <classes>
             <class name="com.theApp.MultipleContextTest" />
         </classes>

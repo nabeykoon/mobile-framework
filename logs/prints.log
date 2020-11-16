@@ -1,1 +1,4 @@
-01:43:56.452 [main] INFO  multipleContextTest - close driver
+02:16:15.760 [main] INFO  multipleContextTest - Switching to alert and pressing OK
+02:16:22.660 [main] INFO  multipleContextTest - WEBVIEW_io.cloudgrey.the_app
+02:16:26.871 [main] INFO  multipleContextTest - WEBVIEW_io.cloudgrey.the_app
+02:16:26.890 [main] INFO  multipleContextTest - close driver

@@ -3,8 +3,9 @@
 
 <suite name="BrowserStack Test Suite" verbose="1">
     <test name="Test user login">
+        <parameter name="platform" value="android"></parameter>
+        <parameter name="capabilitiesDesc" value="browserstack-pixel3-android9"></parameter>
         <parameter name="driverType" value="browserStack"></parameter>
-        <parameter name="executionPlatform" value="browserstack-pixel3-android9"></parameter>
         <classes>
             <class name="com.theApp.UserLoginScenario" />
         </classes>

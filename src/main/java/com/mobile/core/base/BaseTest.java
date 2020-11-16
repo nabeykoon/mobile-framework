@@ -1,6 +1,7 @@
 package com.mobile.core.base;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -33,40 +34,55 @@ public class BaseTest {
     /**
      * @param method
      * @param context
-     * @param executionPlatform - predefoned platform for execution. Should be provided from TestNG xml. Default = emulator-nexus5-android9
-     * @param driverType        - Which driver to be used in execution - "browserStack" should be used for execute using cloud provider BrowserStack, "local" should be used for execute using local Appium server and "RemoteWebDriver" should be used for execute using remote web driver(mobile browser testing)
+     * @param platform         - android or ios
+     * @param capabilitiesDesc - predefined platform for execution. Should be provided from TestNG xml. Default = emulator-nexus5-android9
+     * @param driverType       - Which driver to be used in execution - "browserStack" should be used for execute using cloud provider BrowserStack, "appiumLocal" should be used for execute using appiumDriver in local Appium server and "webLocal" should be used for execute using remote webDriver in local Appium server (mobile web browser testing)
      * @throws MalformedURLException
      */
-    @Parameters({"executionPlatform", "driverType"})
+    @Parameters({"platform", "capabilitiesDesc", "driverType"})
     @BeforeMethod(alwaysRun = true)
-    public void setup(Method method, ITestContext context, @Optional("emulator-nexus5-android9") String executionPlatform, @Optional("local") String driverType) throws MalformedURLException {
+    public void setup(Method method, ITestContext context, @Optional("android") String platform, @Optional("emulator-nexus5-android9-system-apps") String capabilitiesDesc, @Optional("appiumLocal") String driverType) throws MalformedURLException {
 
         log = LogManager.getLogger (method.getName ());
         this.testSuiteName = context.getSuite ().getName ();
         this.testName = context.getCurrentXmlTest ().getName ();
         this.testMethodName = method.getName ();
 
-        AppiumDriverFactory appiumDriverFactory = new AppiumDriverFactory (executionPlatform, log);
-        if (driverType.equals ("browserStack")) {
-            AppiumDriver driver = appiumDriverFactory.getBrowserStackDriver (testName);
-            appiumDrivers.set (driver);
-        } else if (driverType.equals ("local")) {
-            AppiumDriver driver = appiumDriverFactory.getDriver ();
-            appiumDrivers.set (driver);
-        } else {
-            RemoteWebDriver driver = appiumDriverFactory.getRemoteWebDriver ();
-            remoteDrivers.set (driver);
+        AppiumDriverFactory appiumDriverFactory = new AppiumDriverFactory (capabilitiesDesc, log);
+        if (platform.toLowerCase ().equals ("android")) {
+            AndroidDriver androidDriver;
+            RemoteWebDriver remoteWebDriver;
+            switch (driverType.toLowerCase ()) {
+                case "browserstack":
+                    androidDriver = appiumDriverFactory.getAndroidBrowserStackDriver (testName);
+                    appiumDrivers.set (androidDriver);
+                    break;
+                case "appiumlocal":
+                    androidDriver = appiumDriverFactory.getAndroidDriver ();
+                    appiumDrivers.set (androidDriver);
+                    break;
+                case "weblocal":
+                    remoteWebDriver = appiumDriverFactory.getRemoteWebDriver ();
+                    remoteDrivers.set (remoteWebDriver);
+                    break;
+                default:
+                    log.info ("No match found for given " + driverType + " use 'appiumLocal' setup");
+                    androidDriver = appiumDriverFactory.getAndroidDriver ();
+                    appiumDrivers.set (androidDriver);
+                    break;
+            }
+        } else{
+            //Implement for ios
         }
-
     }
 
     @AfterMethod
     public void tearDown() {
         log.info ("close driver");
-        if (getAppiumDriver () != null){
+        if (getAppiumDriver () != null) {
             getAppiumDriver ().quit ();
         }
-        if (getRemoteDriver () != null){
+        if (getRemoteDriver () != null) {
             getRemoteDriver ().quit ();
         }
         appiumDrivers.remove ();
