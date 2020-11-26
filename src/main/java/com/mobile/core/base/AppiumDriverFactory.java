@@ -86,7 +86,7 @@ public class AppiumDriverFactory {
                 break;
 
             default:
-                System.out.println ("No matched found for given executionPlatform. Using 'emulator-nexus5-android9'");
+                System.out.println ("No matched found for given capabilitiesDesc. Using 'emulator-nexus5-android9'");
                 desiredCapabilities.setCapability (MobileCapabilityType.PLATFORM_NAME, platformName);
                 desiredCapabilities.setCapability (MobileCapabilityType.PLATFORM_VERSION, platformVersion);
                 desiredCapabilities.setCapability (MobileCapabilityType.DEVICE_NAME, deviceName);
@@ -118,7 +118,7 @@ public class AppiumDriverFactory {
                 break;
 
             default:
-                System.out.println ("No matched found for given executionPlatform. Using 'browserstack-pixel3-android9'");
+                System.out.println ("No matched found for given capabilitiesDesc. Using 'browserstack-pixel3-android9'");
                 desiredCapabilities.setCapability ("browserstack.user", browserStackUser);
                 desiredCapabilities.setCapability ("browserstack.key", browserStackKey);
                 desiredCapabilities.setCapability (MobileCapabilityType.APP, browserStackUrlTheApp);
@@ -144,7 +144,7 @@ public class AppiumDriverFactory {
                 break;
 
             default:
-                System.out.println ("No matched found for given executionPlatform. Using 'emulator-nexus5-android9'");
+                System.out.println ("No matched found for given capabilitiesDesc. Using 'emulator-nexus5-android9'");
                 desiredCapabilities.setCapability (MobileCapabilityType.PLATFORM_NAME, platformName);
                 desiredCapabilities.setCapability (MobileCapabilityType.PLATFORM_VERSION, platformVersion);
                 desiredCapabilities.setCapability (MobileCapabilityType.DEVICE_NAME, deviceName);

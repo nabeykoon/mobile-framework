@@ -1,0 +1,6 @@
+02:18:17.502 [main] INFO  testScreenOrientation - ======================(1776, 1080)========================
+02:18:17.743 [main] INFO  testScreenOrientation - close driver
+02:20:37.663 [main] INFO  testScreenOrientation - Create Android driver for local appium server execution
+02:20:44.821 [main] INFO  testScreenOrientation - Already device is in given: PORTRAIT
+02:20:44.838 [main] INFO  testScreenOrientation - ======================(1080, 1776)========================
+02:20:45.107 [main] INFO  testScreenOrientation - close driver

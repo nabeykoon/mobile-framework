@@ -1,12 +1,23 @@
 package com.mobile.core.base;
 
+import io.appium.java_client.AppiumDriver;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.ScreenOrientation;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Interaction;
 import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.Sequence;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
+
+import static com.mobile.core.util.TimeUtils.getSystemTime;
+import static com.mobile.core.util.TimeUtils.getTodaysDate;
 
 public class TestUtilities extends BaseTest {
 
@@ -90,6 +101,39 @@ public class TestUtilities extends BaseTest {
     public class NoContextFound extends Exception {
         public NoContextFound(String errorMessage) {
             super (errorMessage);
+        }
+    }
+
+    /**
+     * Take screenshot from any point of test
+     *
+     * @return
+     */
+    protected void takeScreenshotInTest(String fileName) {
+        File scrFile = ((TakesScreenshot) getAppiumDriver ()).getScreenshotAs (OutputType.FILE);
+        String path = System.getProperty ("user.dir")
+                + File.separator + File.separator + "test-output"
+                + File.separator + File.separator + "screenshots"
+                + File.separator + File.separator + getTodaysDate ()
+                + File.separator + File.separator + testSuiteName
+                + File.separator + File.separator + testName
+                + File.separator + File.separator + testMethodName
+                + File.separator + File.separator +
+                getSystemTime () + " " + fileName + ".png";
+        try {
+            FileUtils.copyFile (scrFile, new File (path));
+        } catch (IOException e) {
+            e.printStackTrace ();
+        }
+    }
+
+    protected void changeOrientation(ScreenOrientation screenOrientation){
+        ScreenOrientation curOrientation = getAppiumDriver ().getOrientation ();
+        if(curOrientation != screenOrientation){
+            getAppiumDriver ().rotate (screenOrientation);
+            log.info ("changed orientation to: " + screenOrientation);
+        }else{
+            log.info ("Already device is in given: " + screenOrientation);
         }
     }
 }

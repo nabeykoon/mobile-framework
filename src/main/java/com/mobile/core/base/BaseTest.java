@@ -41,7 +41,7 @@ public class BaseTest {
      */
     @Parameters({"platform", "capabilitiesDesc", "driverType"})
     @BeforeMethod(alwaysRun = true)
-    public void setup(Method method, ITestContext context, @Optional("android") String platform, @Optional("emulator-nexus5-android9-system-apps") String capabilitiesDesc, @Optional("appiumLocal") String driverType) throws MalformedURLException {
+    public void setup(Method method, ITestContext context, @Optional("android") String platform, @Optional("emulator-nexus5-android9") String capabilitiesDesc, @Optional("appiumLocal") String driverType) throws MalformedURLException {
 
         log = LogManager.getLogger (method.getName ());
         this.testSuiteName = context.getSuite ().getName ();
