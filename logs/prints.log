@@ -1,4 +1,1 @@
-02:21:12.025 [main] INFO  testScreenOrientation - Create Android driver for local appium server execution
-02:21:20.437 [main] INFO  testScreenOrientation - changed orientation to: LANDSCAPE
-02:21:20.454 [main] INFO  testScreenOrientation - ======================(1776, 1080)========================
-02:21:20.694 [main] INFO  testScreenOrientation - close driver
+20:47:02.874 [main] INFO  phoneCallAndSmsTestScenario - close driver

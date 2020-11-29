@@ -9,13 +9,15 @@ import org.openqa.selenium.WebElement;
 
 public class WebViewPage extends BasePageObject {
 
+    private By urlTextFieldLocator = MobileBy.AccessibilityId ("urlInput");
+    private By goButtonLocator = MobileBy.AccessibilityId ("navigateBtn");
+    private By bodyTextLocator = By.cssSelector ("body");
+
+
     public WebViewPage(AppiumDriver driver, Logger log) {
         super (driver, log);
     }
 
-    private By urlTextFieldLocator = MobileBy.AccessibilityId ("urlInput");
-    private By goButtonLocator = MobileBy.AccessibilityId ("navigateBtn");
-    private By bodyTextLocator = By.cssSelector ("body");
 
     public WebViewPage enterUrl(String url) {
         waitForVisibilityOf (urlTextFieldLocator, 10);

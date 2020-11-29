@@ -61,6 +61,7 @@ public class AppiumDriverFactory {
                 desiredCapabilities.setCapability (MobileCapabilityType.DEVICE_NAME, deviceName);
                 desiredCapabilities.setCapability (MobileCapabilityType.AUTOMATION_NAME, automationName);
                 desiredCapabilities.setCapability (MobileCapabilityType.APP, appAbsolutePath);
+                desiredCapabilities.setCapability ("autoGrantPermissions", true);
                 break;
 
             //To run using real device

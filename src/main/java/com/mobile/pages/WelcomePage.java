@@ -6,14 +6,18 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+
 public class WelcomePage extends BasePageObject {
-    public WelcomePage(AppiumDriver driver, Logger log) {
-        super (driver, log);
-    }
 
     private By loginScreenLocator = MobileBy.AccessibilityId ("Login Screen");
     private By listDemoLocator = MobileBy.AccessibilityId ("List Demo");
     private By webViewLocator = MobileBy.AccessibilityId ("Webview Demo");
+    private By verifyPhoneNumberLocator = MobileBy.AccessibilityId ("Verify Phone Number");
+
+    public WelcomePage(AppiumDriver driver, Logger log) {
+        super (driver, log);
+    }
+
 
     public void goToLoginScreen() {
         waitForVisibilityOf (loginScreenLocator, 10);
@@ -27,9 +31,14 @@ public class WelcomePage extends BasePageObject {
         listDemo.click ();
     }
 
-    public void goToWebView(){
+    public void goToWebView() {
         waitForVisibilityOf (webViewLocator, 10);
-        WebElement webView = find(webViewLocator);
+        WebElement webView = find (webViewLocator);
         webView.click ();
+    }
+
+    public void goToVerifyPhoneNumber() {
+        waitForVisibilityOf (verifyPhoneNumberLocator, 10);
+        find (verifyPhoneNumberLocator).click ();
     }
 }
