@@ -5,7 +5,7 @@
     <test name="Test opening Appium Pro site from mobile browser">
         <parameter name="platform" value="android"></parameter>
         <parameter name="capabilitiesDesc" value="emulator-nexus5-android9"></parameter>
-        <parameter name="driverType" value="RemoteWebDriver"></parameter>
+        <parameter name="driverType" value="weblocal"></parameter>
         <classes>
             <class name="com.theApp.MobileWebBrowserTestScenario" />
         </classes>

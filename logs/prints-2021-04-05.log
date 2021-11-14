@@ -1,0 +1,6 @@
+20:47:02.874 [main] INFO  phoneCallAndSmsTestScenario - close driver
+00:57:24.284 [main] INFO  swipeAction - Create Android driver for local appium server execution
+01:06:28.542 [main] INFO  swipeAction - Create Android driver for local appium server execution
+01:07:58.507 [main] INFO  UserLoginScenario - Create Android driver for BrowserStack cloud execution
+01:08:35.968 [main] INFO  swipeAction - Create Android driver for local appium server execution
+01:10:48.652 [main] INFO  swipeAction - Create Android driver for local appium server execution

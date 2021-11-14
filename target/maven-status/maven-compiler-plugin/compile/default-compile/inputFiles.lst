@@ -1,3 +1,11 @@
 C:\Repos\mobile-framework\src\main\java\com\mobile\core\base\AppiumDriverFactory.java
 C:\Repos\mobile-framework\src\main\java\com\mobile\core\base\BaseTest.java
+C:\Repos\mobile-framework\src\main\java\com\mobile\pages\LoginPage.java
+C:\Repos\mobile-framework\src\main\java\com\mobile\core\base\TestUtilities.java
+C:\Repos\mobile-framework\src\main\java\com\mobile\pages\WebViewPage.java
+C:\Repos\mobile-framework\src\main\java\com\mobile\core\util\TimeUtils.java
+C:\Repos\mobile-framework\src\main\java\com\mobile\pages\BasePageObject.java
+C:\Repos\mobile-framework\src\main\java\com\mobile\pages\ListDemoPage.java
+C:\Repos\mobile-framework\src\main\java\com\mobile\pages\PhoneNumberVerificationPage.java
 C:\Repos\mobile-framework\src\main\java\com\mobile\core\util\PropertyUtils.java
+C:\Repos\mobile-framework\src\main\java\com\mobile\pages\WelcomePage.java

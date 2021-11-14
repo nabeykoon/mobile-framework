@@ -1,4 +1,13 @@
-com\mobile\core\base\BaseTest.class
-com\mobile\core\base\AppiumDriverFactory.class
-com\mobile\core\util\UnableToLoadPropertiesException.class
+com\mobile\pages\WebViewPage.class
 com\mobile\core\util\PropertyUtils.class
+com\mobile\pages\PhoneNumberVerificationPage.class
+com\mobile\core\base\BaseTest.class
+com\mobile\pages\ListDemoPage.class
+com\mobile\core\util\UnableToLoadPropertiesException.class
+com\mobile\core\base\AppiumDriverFactory.class
+com\mobile\pages\BasePageObject.class
+com\mobile\core\base\TestUtilities$NoContextFound.class
+com\mobile\core\util\TimeUtils.class
+com\mobile\pages\LoginPage.class
+com\mobile\core\base\TestUtilities.class
+com\mobile\pages\WelcomePage.class
