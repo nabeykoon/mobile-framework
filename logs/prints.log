@@ -1,1 +1,4 @@
-23:50:20.997 [main] INFO  testAppiumWebPage - close driver
+01:32:43.774 [main] INFO  testAppiumWebPage - Create remote web driver for browser based execution in local appium server
+01:32:59.398 [main] INFO  testAppiumWebPage - close driver
+01:34:29.485 [main] INFO  testAppiumWebPage - Create remote web driver for browser based execution in local appium server
+01:34:48.280 [main] INFO  testAppiumWebPage - close driver
